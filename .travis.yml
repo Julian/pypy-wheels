@@ -39,10 +39,10 @@ jobs:
 stage: wheels
 
 script:
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./scripts/run.sh; done
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./scripts/clone-gh-pages.sh; done
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then python scripts/build_index.py wheelhouse/ubuntu/ /tmp/gh-pages/ubuntu; done
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./scripts/commit-gh-pages.sh; done
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./scripts/run.sh; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./scripts/clone-gh-pages.sh; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then python scripts/build_index.py wheelhouse/ubuntu/ /tmp/gh-pages/ubuntu; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./scripts/commit-gh-pages.sh; fi
 
 os:
   - linux
