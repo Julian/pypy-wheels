@@ -24,8 +24,10 @@ jobs:
 
     - stage: pytest
       env:
-      install:
-        - apt install python-pytest
+      addons:
+        apt:
+          packages:
+            - python-pytest
       script:
         - py.test scripts
 
